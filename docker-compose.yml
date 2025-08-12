@@ -208,10 +208,10 @@ services:
       - ./src/visualization:/app
       - ./data:/data
     ports:
-      - "8501:8501"
+      - "3006:8502"
     networks:
       - airquality-network
-    command: streamlit run dashboard.py --server.port 8501 --server.address 0.0.0.0
+    command: streamlit run minimal_dashboard.py --server.port 8502 --server.address 0.0.0.0
 
   # Prometheus for monitoring
   prometheus:

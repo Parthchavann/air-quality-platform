@@ -66,8 +66,9 @@ class DatabaseConnection:
         """
         
         try:
-            df = pd.read_sql_query(query, _self.engine, params=[hours])
-            df['timestamp'] = pd.to_datetime(df['timestamp'])
+            df = pd.read_sql_query(query % hours, _self.engine)
+            if not df.empty:
+                df['timestamp'] = pd.to_datetime(df['timestamp'])
             return df
         except Exception as e:
             logger.error(f"Error fetching air quality data: {e}")
@@ -97,8 +98,10 @@ class DatabaseConnection:
         """
         
         try:
-            df = pd.read_sql_query(query, _self.engine, params=[city, days])
-            df['timestamp'] = pd.to_datetime(df['timestamp'])
+            formatted_query = query.replace('%s', '{}').format(f"'{city}'", days)
+            df = pd.read_sql_query(formatted_query, _self.engine)
+            if not df.empty:
+                df['timestamp'] = pd.to_datetime(df['timestamp'])
             return df
         except Exception as e:
             logger.error(f"Error fetching city history for {city}: {e}")
@@ -130,8 +133,9 @@ class DatabaseConnection:
         """
         
         try:
-            df = pd.read_sql_query(query, _self.engine, params=[hours])
-            df['hour_timestamp'] = pd.to_datetime(df['hour_timestamp'])
+            df = pd.read_sql_query(query % hours, _self.engine)
+            if not df.empty:
+                df['hour_timestamp'] = pd.to_datetime(df['hour_timestamp'])
             return df
         except Exception as e:
             logger.error(f"Error fetching hourly data: {e}")

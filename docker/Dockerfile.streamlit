@@ -21,17 +21,20 @@ RUN pip install --no-cache-dir \
     plotly \
     keplergl \
     folium \
+    streamlit-folium \
     altair \
     psycopg2-binary \
     sqlalchemy \
     kafka-python \
     requests \
     python-dotenv \
-    pytz
+    pytz \
+    streamlit-option-menu \
+    streamlit-extras
 
 # Copy application code
 COPY src/visualization/ /app/
 
-EXPOSE 8501
+EXPOSE 8502
 
-CMD ["streamlit", "run", "dashboard.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "lovable_dashboard.py", "--server.port=8502", "--server.address=0.0.0.0"]
