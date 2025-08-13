@@ -211,7 +211,7 @@ services:
       - "3006:8502"
     networks:
       - airquality-network
-    command: streamlit run minimal_dashboard.py --server.port 8502 --server.address 0.0.0.0
+    command: streamlit run render_dashboard.py --server.port 8502 --server.address 0.0.0.0
 
   # Prometheus for monitoring
   prometheus:

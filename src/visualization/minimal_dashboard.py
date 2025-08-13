@@ -1,6 +1,6 @@
 """
-Air Quality Monitoring Dashboard - Minimal & Error-Free
-Zero custom CSS to prevent React conflicts
+AtmosAnalytics Platform - Enterprise Environmental Intelligence
+Professional air quality monitoring with zero custom CSS for maximum compatibility
 """
 
 import streamlit as st
@@ -20,8 +20,8 @@ logger = logging.getLogger(__name__)
 
 # Page configuration
 st.set_page_config(
-    page_title="Air Quality Monitor",
-    page_icon="🌍",
+    page_title="AtmosAnalytics Platform",
+    page_icon="🌬️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -54,8 +54,8 @@ class MinimalDashboard:
     
     def render_header(self):
         """Render simple header"""
-        st.title("🌍 Air Quality Monitor")
-        st.markdown("**Real-time Environmental Intelligence Platform**")
+        st.title("🌬️ AtmosAnalytics Platform")
+        st.markdown("**Enterprise Environmental Intelligence & Analytics**")
         
         # Status Row
         col1, col2, col3, col4 = st.columns(4)

@@ -1,6 +1,8 @@
-# Real-Time City Air Quality & Pollution Insights Platform
+# AtmosAnalytics Platform
 
-A comprehensive data engineering platform for monitoring, analyzing, and visualizing real-time air quality data across multiple cities.
+**Enterprise Environmental Intelligence & Data Analytics**
+
+A comprehensive, enterprise-grade platform for monitoring, analyzing, and visualizing real-time air quality data across multiple cities. AtmosAnalytics provides professional environmental intelligence with advanced analytics capabilities.
 
 ## Features
 
